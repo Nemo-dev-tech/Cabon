@@ -1,0 +1,124 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --eco: #16a34a;
+  --earth: #b45309;
+  --sand: #f5f1e8;
+  --ink: #1c1917;
+  --paper: #fefcf7;
+  --line: #e7e0d3;
+    --muted: #78716c;
+    --sky: #0ea5e9;
+    --amber: #d97706;
+    --rose: #e11d48;
+  }
+
+  * {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  html {
+    font-family: "Noto Sans Thai", "Inter", system-ui, -apple-system, sans-serif;
+  }
+
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    overscroll-behavior-y: none;
+  }
+
+  .font-display {
+    font-family: "Noto Serif Thai", "Noto Sans Thai", serif;
+  }
+}
+
+@layer utilities {
+  .anim-fade-in {
+    animation: fadeIn 0.2s ease;
+  }
+  .anim-slide-up {
+    animation: slideUp 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .anim-scale-in {
+    animation: scaleIn 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .anim-blink {
+    animation: blink 1s ease-in-out infinite;
+  }
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { transform: translateY(100%); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes scaleIn {
+  from { transform: scale(0.95); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* range slider styling */
+input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  background: transparent;
+  cursor: pointer;
+}
+input[type="range"]::-webkit-slider-runnable-track {
+  height: 8px;
+  border-radius: 999px;
+  background: #e7e5e4;
+}
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  margin-top: -6px;
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  background: #16a34a;
+  border: 3px solid white;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+}
+input[type="range"]::-moz-range-track {
+  height: 8px;
+  border-radius: 999px;
+  background: #e7e5e4;
+}
+input[type="range"]::-moz-range-thumb {
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  background: #16a34a;
+  border: 3px solid white;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+}
